@@ -10,6 +10,8 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "LocationManager.h"
 #import "Search.h"
+#import "DataParser.h"
+#import "AlertManager.h"
 
 
 @interface MapViewController : UIViewController

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,21 +18,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AdressLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GJ-iH-2bC">
-                        <rect key="frame" x="201" y="19" width="102" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJX-5q-DTX">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="Vbw-Lb-Hw8"/>
+                            <constraint firstAttribute="height" constant="20" id="ytK-pc-Xdl"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJX-5q-DTX">
-                        <rect key="frame" x="33" y="19" width="104" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AdressLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GJ-iH-2bC">
+                        <rect key="frame" x="0.0" y="19" width="300" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="HJm-b2-jGN"/>
+                            <constraint firstAttribute="height" constant="40" id="yft-cm-rCL"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="5GJ-iH-2bC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3zR-ri-saJ"/>
+                    <constraint firstItem="5GJ-iH-2bC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="4LB-DH-3PT"/>
+                    <constraint firstItem="nJX-5q-DTX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DpD-50-45b"/>
+                    <constraint firstItem="nJX-5q-DTX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Jji-M9-xpq"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="adressLabel" destination="5GJ-iH-2bC" id="4NY-Sz-AK4"/>

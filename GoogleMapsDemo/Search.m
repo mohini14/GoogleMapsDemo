@@ -8,16 +8,14 @@
 
 #import "Search.h"
 
-@implementation Search{
-	NSArray *searchArray;
-}
-
+@implementation Search
 
 
 +(instancetype) loadXIB{
 	Search *search=[[[NSBundle mainBundle]loadNibNamed:@"SearchView" owner:self options:nil]lastObject];
 	search.tableView.delegate=search;
 	search.tableView.dataSource=search;
+    search.placesArray = @[];
 
 	
 	return search;
@@ -28,23 +26,30 @@
 #pragma mark - Table View Delegates
 
 -(NSInteger )tableView :(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-	return searchArray.count;
+	return self.placesArray.count;
 }
 
 -(double)tableView : (UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
 	return ROW_HIEGHT;
-	
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-	TableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
-	if(cell==nil){
-		cell=[[[NSBundle mainBundle]loadNibNamed:@"TableViewCell" owner:self.tableView options:nil]firstObject];
-	}
+	
 	
 }
 
-
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
+    if(cell==nil){
+        cell=[[[NSBundle mainBundle]loadNibNamed:@"TableViewCell" owner:self.tableView options:nil]firstObject];
+    }
+    PlaceModel *place=self.placesArray[indexPath.row];
+    cell.nameLabel.text=place.name;
+    cell.adressLabel.text=place.vicinity;
+    
+    return cell;
+}
 
 
 
@@ -55,7 +60,6 @@
 
 
 @end
-
 
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -90,6 +90,21 @@
 	self.searchView.frame=self.searchBarView.frame;
 	[self.view addSubview:self.searchView];
 	[self.searchBarView setHidden:NO];
+        NSString *searchString=self.searchView.searchBar.text;
+        [self.searchView.searchBar becomeFirstResponder];
+        [[LocationManager getInstance]getLocation:^(double latitude, double longitude, NSError *error) {
+            [DataParser parseSearchData:searchString withLatitude:latitude withLongitude:longitude withCompletionHandler:^(NSArray *array, NSString *errorMsg) {
+                if(errorMsg!=nil){
+                    [AlertManager showAlertPopupWithTitle:errorMsg forView:self];
+                }else{
+                     self.searchView.placesArray=array;
+                    [self.searchView.tableView reloadData];
+                    [self.searchView.searchBar becomeFirstResponder];
+                }
+                }];
+        }];
+        
+        
 	
 	}
 
