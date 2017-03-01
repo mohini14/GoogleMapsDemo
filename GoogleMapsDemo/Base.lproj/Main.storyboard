@@ -24,9 +24,8 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFC-gg-eOd" userLabel="Map View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.046262624260000003" green="1" blue="0.21800936949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfa-j4-hGA" customClass="Search">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfa-j4-hGA">
                                 <rect key="frame" x="0.0" y="64" width="240" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -61,6 +60,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapContainerView" destination="lFC-gg-eOd" id="Gtl-sy-SFu"/>
+                        <outlet property="searchBarView" destination="xfa-j4-hGA" id="eYi-S5-dCJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,7 +74,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9ZM-y7-0lP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ZM-y7-0lP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

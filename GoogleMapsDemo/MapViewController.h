@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import "LocationManager.h"
+#import "Search.h"
 
 
 @interface MapViewController : UIViewController
@@ -16,10 +17,9 @@
 
 
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
-
 @property (strong, nonatomic) IBOutlet UIView *mapContainerView;
-
-
+@property(strong,nonatomic) Search *searchView;
+@property (weak, nonatomic) IBOutlet UIView *searchBarView;
 
 
 - (void)setMapToDefaultLocation;

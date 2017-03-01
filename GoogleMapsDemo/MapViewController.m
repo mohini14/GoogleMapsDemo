@@ -44,6 +44,7 @@
 -(void)setMapToDefaultLocation{
 	
 	//create a GMSCameraPosition that tells map to display corresponding coordinates
+	[self.searchBarView setHidden:YES];
     [[LocationManager getInstance] getLocation:^(double lat, double lon, NSError *error){
         GMSCameraPosition *camera;
         if(error == nil) {
@@ -83,8 +84,14 @@
 
 
 - (IBAction)searchButton:(UIBarButtonItem *)sender {
-
-
+	
+	if(_searchView==nil){
+	self.searchView = [Search loadXIB];
+	self.searchView.frame=self.searchBarView.frame;
+	[self.view addSubview:self.searchView];
+	[self.searchBarView setHidden:NO];
+	
+	}
 
 }
 @end

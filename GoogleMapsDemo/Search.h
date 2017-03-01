@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Define.h"
+#import "TableViewCell.h"
 
-@interface Search : UIView <UITableViewDataSource,UITableViewDelegate>
+@interface Search : UIView <UITableViewDelegate,UITableViewDataSource>
 
 
 
@@ -16,7 +18,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
-- (IBAction)doneButton:(UIButton *)sender;
+
+
 - (IBAction)searchButton:(UIButton *)sender;
+
++(instancetype) loadXIB;
 
 @end
