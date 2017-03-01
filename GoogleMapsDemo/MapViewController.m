@@ -17,10 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//	[self setUp];
+    self.mapView.delegate = self;
+    [self setMapToDefaultLocation];
 	
-	[LocationManager getInstance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,45 +41,50 @@
 
 
 
--(void) setUp{
+-(void)setMapToDefaultLocation{
 	
 	//create a GMSCameraPosition that tells map to display corresponding coordinates
-	
-	GMSCameraPosition *camera=[GMSCameraPosition  cameraWithLatitude:28.5355 longitude:77.3910 zoom:6];
-	_mapView=[GMSMapView mapWithFrame:(CGRectZero) camera:camera];
-	_mapView.myLocationEnabled=YES;
+    [[LocationManager getInstance] getLocation:^(double lat, double lon, NSError *error){
+        GMSCameraPosition *camera;
+        if(error == nil) {
+            camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lon zoom:16];
+        }else{
+            camera = [GMSCameraPosition cameraWithLatitude:28 longitude:77 zoom:16];
+        }
+        self.mapView = [GMSMapView mapWithFrame:self.mapContainerView.frame camera:camera];
+        self.mapView.myLocationEnabled = YES;
+//        //in order to create markers in centre of the map
+//        GMSMarker *marker=[[GMSMarker alloc]init];
+//        marker.position=camera.target;
+//        marker.appearAnimation = kGMSMarkerAnimationPop;
+//        marker.map=self.mapView;
+        [self.view addSubview:self.mapView] ;
+    }];
 
-	
-	//in order to create markers in centre of the map
-	GMSMarker *marker=[[GMSMarker alloc]init];	marker.position=CLLocationCoordinate2DMake(28.5355, 77.3910);
-	marker.title=@"India";
-	marker.snippet=@"Noida";
-	marker.map=_mapView;
 	
 	
 	
 }
 
+-(void) updateLocation{
+    GMSMarker *marker=[[GMSMarker alloc]init];
+    marker.position=_mapView.camera.target;
+    marker.appearAnimation = kGMSMarkerAnimationPop;
+    marker.map=self.mapView;
+    self.view = self.mapView;
+
+    
+}
 
 - (IBAction)refreshButton:(id)sender {
-	
-	GMSCameraPosition *camera=[GMSCameraPosition  cameraWithLatitude:28.5355 longitude:77.3910 zoom:6];
-	_mapView=[GMSMapView mapWithFrame:(CGRectZero) camera:camera];
-	_mapView.myLocationEnabled=YES;
-	
-	
-	//in order to create markers in centre of the map
-	GMSMarker *marker=[[GMSMarker alloc]init];	marker.position=CLLocationCoordinate2DMake(28.5355, 77.3910);
-	marker.title=@"India";
-	marker.snippet=@"Noida";
-	marker.map=_mapView;
+    [self setMapToDefaultLocation];
 }
 
 
 
 - (IBAction)searchButton:(UIBarButtonItem *)sender {
-	
-	
-	
+
+
+
 }
 @end

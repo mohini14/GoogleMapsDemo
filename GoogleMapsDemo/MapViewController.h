@@ -11,23 +11,18 @@
 #import "LocationManager.h"
 
 
-
-
-
-
-
 @interface MapViewController : UIViewController
-
 
 
 
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
 
+@property (strong, nonatomic) IBOutlet UIView *mapContainerView;
 
 
 
 
--(void) setUp;
+- (void)setMapToDefaultLocation;
 - (IBAction)refreshButton:(id)sender;
 - (IBAction)searchButton:(UIBarButtonItem *)sender;
 
