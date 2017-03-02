@@ -16,6 +16,7 @@
 #define PLACES_URL @"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@"
 #define PARSING_ERROR_MSG @"SOMETHING WENT WRONG"
 #define RESPONSE_WILL_NON_NIL_ERROR_MSG @"SOMETHING WENT WRONG"
+#define EMPTY_STRING_ERROR @"cannot send an empty error"
 
 #define PLACES_RESULTS_KEY @"results"
 #define PLACES_NAME_KEY @"name"

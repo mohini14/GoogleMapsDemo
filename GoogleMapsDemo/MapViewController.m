@@ -17,34 +17,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.mapView.delegate = self;
-    [self setMapToDefaultLocation];
+	[self SetUpVC];
 	
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	[super didReceiveMemoryWarning];
+	// Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark- set up Initial VC
+-(void) SetUpVC{
+	
+	self.mapView.delegate = self;
+	[self setMapToDefaultLocation];
+	[self.searchBarView setHidden:YES];
 }
-*/
 
 
 
-
-
+#pragma mark-set up Map
 -(void)setMapToDefaultLocation{
 	
 	//create a GMSCameraPosition that tells map to display corresponding coordinates
-	[self.searchBarView setHidden:YES];
     [[LocationManager getInstance] getLocation:^(double lat, double lon, NSError *error){
         GMSCameraPosition *camera;
         if(error == nil) {
@@ -54,12 +51,8 @@
         }
         self.mapView = [GMSMapView mapWithFrame:self.mapContainerView.frame camera:camera];
         self.mapView.myLocationEnabled = YES;
-//        //in order to create markers in centre of the map
-//        GMSMarker *marker=[[GMSMarker alloc]init];
-//        marker.position=camera.target;
-//        marker.appearAnimation = kGMSMarkerAnimationPop;
-//        marker.map=self.mapView;
-        [self.view addSubview:self.mapView] ;
+		//[self updateMarker];
+		[self.view addSubview:self.mapView] ;
     }];
 
 	
@@ -67,34 +60,71 @@
 	
 }
 
--(void) updateLocation{
-    GMSMarker *marker=[[GMSMarker alloc]init];
-    marker.position=_mapView.camera.target;
-    marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.map=self.mapView;
-    self.view = self.mapView;
 
-    
+//-(void) updateMarker{
+//    GMSMarker *marker=[[GMSMarker alloc]init];
+//    marker.position=_mapView.camera.target;
+//    marker.appearAnimation = kGMSMarkerAnimationPop;
+//    marker.map=self.mapView;
+//    self.view = self.mapView;
+//
+//    
+//}
+
+
+-(void) setMarker
+{
+	
+	[self.mapView clear];
+	
+	for(PlaceModel *obj in self.places){
+		GMSMarker *marker=[[GMSMarker alloc]init];
+		marker.position=CLLocationCoordinate2DMake([obj.lat doubleValue], [obj.longt doubleValue]);// method gives location for given latitude and longitude
+		marker.title=obj.name;
+		marker.icon=obj.iconImage;
+		marker.map=self.mapView;
+		
+	}
+	
+	
 }
+
+
+
+#pragma mark-mapView Delegates
+- (void) mapView:(GMSMapView *)mapView didTapAtCoordinate :(CLLocationCoordinate2D)coordinate{
+	[self.searchBarView setHidden:YES];
+	[self setMarker];
+	
+}
+
+
+#pragma mark-Methods to handle actions on VC
 
 - (IBAction)refreshButton:(id)sender {
     [self setMapToDefaultLocation];
 }
 
 
-
 - (IBAction)searchButton:(UIBarButtonItem *)sender {
 	
-	if(_searchView==nil){
-	self.searchView = [Search loadXIB];
-	self.searchView.frame=self.searchBarView.frame;
-	[self.view addSubview:self.searchView];
 	[self.searchBarView setHidden:NO];
-    [self.searchView.searchBar becomeFirstResponder];
-        
-        
+	[self.searchView.searchBar becomeFirstResponder];
 	
-	}
-
+	self.searchView = [Search loadXIB];
+	
+	[_searchView showSearchView:self.view overView:_searchBarView completion:^(NSArray *searchResult) {
+	
+		_places = searchResult;
+		[self setMarker];
+		[self.searchBarView setHidden:YES];
+		
+	}];
+	
+	
+	
 }
+
+
+
 @end

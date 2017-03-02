@@ -8,6 +8,7 @@
 
 #import "AlertManager.h"
 
+//method displays warning or message on screen
 @implementation AlertManager
 
 + (void)showAlertPopupWithTitle:(NSString *)message forView:(UIViewController *)view {

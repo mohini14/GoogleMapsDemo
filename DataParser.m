@@ -27,7 +27,7 @@
                 if(err!=nil){
                     errorMsg=PARSING_ERROR_MSG;
                 }else{
-                     //places=[responseData objectForKey:PLACES_RESULTS_KEY];
+                    
                     for(NSDictionary *obj in responseData[PLACES_RESULTS_KEY]){
                         PlaceModel *p = [[PlaceModel alloc] initWithDictionary:obj];
                         [places addObject:p];

@@ -11,6 +11,7 @@
 
 @interface AlertManager : NSObject
 
+
 + (void)showAlertPopupWithTitle:(NSString *)message forView:(UIViewController *)view ;
 
 @end

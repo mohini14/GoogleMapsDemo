@@ -10,7 +10,7 @@
 
 @implementation Search
 
-
+#pragma  mark-To load customise XIB file
 +(instancetype) loadXIB{
 	Search *search=[[[NSBundle mainBundle]loadNibNamed:@"SearchView" owner:self options:nil]lastObject];
 	search.tableView.delegate=search;
@@ -21,6 +21,14 @@
 	return search;
 }
 
+
+-(void)showSearchView:(UIView*)superView overView:(UIView*)subView  completion:(CompletionBlock)completion
+{
+	self.frame = subView.frame;
+	_callback = completion;
+	[superView addSubview:self];
+	
+}
 
 
 #pragma mark - Table View Delegates
@@ -53,36 +61,52 @@
 }
 
 
+-(IBAction)onShowButtonClick:(id)sender
+{
+	
+	if(_placesArray.count > 0)
+		_callback(_placesArray);
+	else
+		_callback([NSArray new]);
+	
+	[self removeFromSuperview];
+}
+
+
 
 #pragma mark-actions on customise view
 
 - (IBAction)searchButton:(UIButton *)sender {
     
     NSString *searchString=[self.searchBar.text lowercaseString];
+	if(searchString.length >0){
     [[LocationManager getInstance]getLocation:^(double latitude, double longitude, NSError *error) {
         [DataParser parseSearchData:searchString withLatitude:latitude withLongitude:longitude withCompletionHandler:^(NSArray *array, NSString *errorMsg) {
             if(errorMsg!=nil){
                 [AlertManager showAlertPopupWithTitle:errorMsg forView:self.superview.inputViewController];
             }else{
                 self.placesArray=array;
-                [self.tableView reloadData];
+				[self.tableView reloadData];
             }
         }];
     }];
+	}else{
+		[AlertManager showAlertPopupWithTitle:EMPTY_STRING_ERROR forView:self.superview];
+	}
+
 }
+
+#pragma mark - method to pass data to main VC
+-(void) sendData :(NSArray *)places withCompletionHandler:(void (^)(NSArray * array))callBack{
+	callBack(places);
+	
+}
+
+
+
 
 
 @end
 
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//	static NSString *simpleTableIdentifier = @"SimpleTableItem";
-//	
-//	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-//	
-//	if (cell == nil) {
-//		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-//	}
-//	cell.textLabel.text = self.dataArray[indexPath.row];
-//	return cell;
-//}
+

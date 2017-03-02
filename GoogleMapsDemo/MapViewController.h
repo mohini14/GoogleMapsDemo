@@ -14,16 +14,20 @@
 #import "AlertManager.h"
 
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<GMSMapViewDelegate>
 
 
 
-@property (strong, nonatomic) IBOutlet GMSMapView *mapView;
-@property (strong, nonatomic) IBOutlet UIView *mapContainerView;
-@property(strong,nonatomic) Search *searchView;
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *mapContainerView;
+
+@property (strong,nonatomic) Search *searchView;
 @property (weak, nonatomic) IBOutlet UIView *searchBarView;
+@property (strong,nonatomic) NSArray *places;
 
-
+-(void) SetUpVC;
+-(void) setMarker;
+//-(void) updateMarker;
 - (void)setMapToDefaultLocation;
 - (IBAction)refreshButton:(id)sender;
 - (IBAction)searchButton:(UIBarButtonItem *)sender;
