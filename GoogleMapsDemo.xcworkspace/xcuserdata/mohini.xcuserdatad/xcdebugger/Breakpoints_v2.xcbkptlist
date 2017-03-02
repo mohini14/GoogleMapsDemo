@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoogleMapsDemo/MapViewController.m"
@@ -54,7 +54,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoogleMapsDemo/Search.m"
@@ -73,44 +73,76 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DataParser.m"
-            timestampString = "510089023.602038"
+            filePath = "GoogleMapsDemo/Search.m"
+            timestampString = "510118025.183981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "+parseSearchData:withLatitude:withLongitude:withCompletionHandler:"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-searchButton:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsDemo/Search.m"
+            timestampString = "510118038.750305"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-searchButton:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleMapsDemo/Search.m"
+            timestampString = "510118044.016126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-searchButton:"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__79+[DataParser parseSearchData:withLatitude:withLongitude:withCompletionHandler:]_block_invoke"
+                  symbolName = "-[Search searchButton:]"
                   moduleName = "GoogleMapsDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mohini/codebase/GoogleMapsDemo/DataParser.m"
-                  timestampString = "510089034.189768"
+                  urlString = "file:///Users/mohini/codebase/GoogleMapsDemo/GoogleMapsDemo/Search.m"
+                  timestampString = "510118054.010359"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "477">
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "119">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__79+[DataParser parseSearchData:withLatitude:withLongitude:withCompletionHandler:]_block_invoke"
+                  symbolName = "__23-[Search searchButton:]_block_invoke"
                   moduleName = "GoogleMapsDemo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mohini/codebase/GoogleMapsDemo/DataParser.m"
-                  timestampString = "510089034.191611"
+                  urlString = "file:///Users/mohini/codebase/GoogleMapsDemo/GoogleMapsDemo/Search.m"
+                  timestampString = "510118054.012277"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "489">
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -121,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DataParser.m"
-            timestampString = "510089026.28022"
+            filePath = "GoogleMapsDemo/Search.m"
+            timestampString = "510118052.318313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "+parseSearchData:withLatitude:withLongitude:withCompletionHandler:"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-searchButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DataParser.m"
-            timestampString = "510089089.570278"
+            filePath = "GoogleMapsDemo/Search.m"
+            timestampString = "510118053.56239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "+parseSearchData:withLatitude:withLongitude:withCompletionHandler:"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-searchButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#define ROW_HIEGHT 120
+#define ROW_HIEGHT 100
 #define GOOGLE_MAP_KEY @"AIzaSyDBc6Ywk2UB2l-ds0gQ1jyYkU5Utn9c9zY"
 #define GOOGLE_PLACES_KEY @"AIzaSyDWgFFDdBCITqHc3NsdKL8fWGzAD7zX-s4"
 #define BACKGROUND_QUEUE  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)

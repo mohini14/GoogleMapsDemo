@@ -57,11 +57,11 @@
 
 - (IBAction)searchButton:(UIButton *)sender {
     
-    NSString *searchString=self.searchBar.text;
+    NSString *searchString=[self.searchBar.text lowercaseString];
     [[LocationManager getInstance]getLocation:^(double latitude, double longitude, NSError *error) {
         [DataParser parseSearchData:searchString withLatitude:latitude withLongitude:longitude withCompletionHandler:^(NSArray *array, NSString *errorMsg) {
             if(errorMsg!=nil){
-                [AlertManager showAlertPopupWithTitle:errorMsg forView:self.superview];
+                [AlertManager showAlertPopupWithTitle:errorMsg forView:self.superview.inputViewController];
             }else{
                 self.placesArray=array;
                 [self.tableView reloadData];
