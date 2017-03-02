@@ -18,7 +18,7 @@
         [ServiceManager GETSearchResults:url withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             NSDictionary *responseData=nil;
             NSString *errorMsg=nil;
-            NSMutableArray *places;
+            NSMutableArray *places = [@[] mutableCopy];
             if(error!=nil){
                 errorMsg=SERVER_FAILED;
             }else{

@@ -10,6 +10,9 @@
 #import "Define.h"
 #import "TableViewCell.h"
 #import "PlaceModel.h"
+#import "LocationManager.h"
+#import "DataParser.h"
+#import "AlertManager.h"
 
 @interface Search : UIView <UITableViewDelegate,UITableViewDataSource>
 

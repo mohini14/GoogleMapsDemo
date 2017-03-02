@@ -16,13 +16,16 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="48r-1j-orc">
-                    <rect key="frame" x="0.0" y="52" width="400" height="498"/>
+                    <rect key="frame" x="0.0" y="52" width="240" height="498"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="rQj-vb-QWS"/>
+                    </constraints>
                 </tableView>
                 <searchBar contentMode="redraw" placeholder="Search Here!!!" translatesAutoresizingMaskIntoConstraints="NO" id="FJ3-YY-IQH">
-                    <rect key="frame" x="0.0" y="8" width="150" height="44"/>
+                    <rect key="frame" x="0.0" y="8" width="180" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="Svf-CN-rHt"/>
+                        <constraint firstAttribute="width" constant="180" id="Svf-CN-rHt"/>
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
@@ -31,7 +34,7 @@
                     </scopeButtonTitles>
                 </searchBar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BO-qS-Hw2">
-                    <rect key="frame" x="150" y="16" width="250" height="30"/>
+                    <rect key="frame" x="180" y="16" width="220" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="5BH-f0-aYH"/>
                     </constraints>
@@ -43,7 +46,6 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="48r-1j-orc" secondAttribute="trailing" id="1OX-6q-ors"/>
                 <constraint firstItem="48r-1j-orc" firstAttribute="leading" secondItem="8Yk-Tg-PBL" secondAttribute="leading" id="8LD-r5-ETZ"/>
                 <constraint firstItem="9BO-qS-Hw2" firstAttribute="top" secondItem="8Yk-Tg-PBL" secondAttribute="top" constant="16" id="OSt-Kd-cHK"/>
                 <constraint firstAttribute="trailing" secondItem="9BO-qS-Hw2" secondAttribute="trailing" id="R7X-n8-ZR8"/>
