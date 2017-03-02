@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaceModel.h"
+#import "CacheManager.h"
 
 @interface TableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *adressLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *iconLabel;
+
+-(void) setCellAttribute :(PlaceModel *)place;
 
 @end

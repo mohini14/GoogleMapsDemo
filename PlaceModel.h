@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Define.h"
+#import "CacheManager.h"
 
 @interface PlaceModel : NSObject
 
@@ -15,7 +17,10 @@
 @property  NSNumber *lat;
 @property  NSNumber *longt;
 @property  NSString *vicinity;
+@property  NSString *iconURL;
+@property  UIImage *iconImage;
 
 - (instancetype) initWithDictionary:(NSDictionary*)dictionary;
+-(void) getImage :(void (^)(UIImage * image))callBack;
 
 @end

@@ -13,6 +13,7 @@
 #import "LocationManager.h"
 #import "DataParser.h"
 #import "AlertManager.h"
+#import "CacheManager.h"
 
 @interface Search : UIView <UITableViewDelegate,UITableViewDataSource>
 

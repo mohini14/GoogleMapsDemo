@@ -11,6 +11,7 @@
 		15005FB21E657F67007B245E /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15005FB11E657F67007B245E /* SearchView.xib */; };
 		15005FB81E658901007B245E /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15005FB71E658901007B245E /* LocationManager.m */; };
 		151DFCCD1E64142F0048F0FF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 151DFCCC1E64142F0048F0FF /* Podfile */; };
+		153074C31E67FC7F00DAA29F /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 153074C21E67FC7F00DAA29F /* CacheManager.m */; };
 		154097D11E66D1D9004A203D /* Define.m in Sources */ = {isa = PBXBuildFile; fileRef = 154097D01E66D1D9004A203D /* Define.m */; };
 		154097D51E66D2D6004A203D /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 154097D31E66D2D6004A203D /* TableViewCell.m */; };
 		154097D61E66D2D6004A203D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154097D41E66D2D6004A203D /* TableViewCell.xib */; };
@@ -35,6 +36,8 @@
 		15005FB61E658901007B245E /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		15005FB71E658901007B245E /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		151DFCCC1E64142F0048F0FF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		153074C11E67FC7F00DAA29F /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
+		153074C21E67FC7F00DAA29F /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
 		154097CF1E66D1D9004A203D /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		154097D01E66D1D9004A203D /* Define.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Define.m; sourceTree = "<group>"; };
 		154097D21E66D2D6004A203D /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			children = (
 				154097D41E66D2D6004A203D /* TableViewCell.xib */,
 				15005FB11E657F67007B245E /* SearchView.xib */,
+				153074C01E67FC5800DAA29F /* CacheManager */,
 			);
 			name = XIB;
 			path = GoogleMapsDemo;
@@ -96,6 +100,16 @@
 				15005FAB1E657E46007B245E /* Search.h */,
 			);
 			name = "Customise View";
+			sourceTree = "<group>";
+		};
+		153074C01E67FC5800DAA29F /* CacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				153074C11E67FC7F00DAA29F /* CacheManager.h */,
+				153074C21E67FC7F00DAA29F /* CacheManager.m */,
+			);
+			name = CacheManager;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		154097D71E66E103004A203D /* Resources */ = {
@@ -367,6 +381,7 @@
 				156C190C1E6409FD00E85A0B /* AppDelegate.m in Sources */,
 				15CF83EF1E674AE000440C2D /* AlertManager.m in Sources */,
 				15005FB81E658901007B245E /* LocationManager.m in Sources */,
+				153074C31E67FC7F00DAA29F /* CacheManager.m in Sources */,
 				15CF83EB1E673C0800440C2D /* PlaceModel.m in Sources */,
 				154097D11E66D1D9004A203D /* Define.m in Sources */,
 				154097DE1E66EF3F004A203D /* DataParser.m in Sources */,

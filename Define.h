@@ -15,6 +15,7 @@
 #define RADIUS @"500"
 #define PLACES_URL @"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@"
 #define PARSING_ERROR_MSG @"SOMETHING WENT WRONG"
+#define RESPONSE_WILL_NON_NIL_ERROR_MSG @"SOMETHING WENT WRONG"
 
 #define PLACES_RESULTS_KEY @"results"
 #define PLACES_NAME_KEY @"name"
@@ -23,6 +24,7 @@
 #define PLACES_LAT_KEY @"lat"
 #define PLACES_LONG_KEY @"lng"
 #define PLACES_VICINITY_KEY @"vicinity"
+#define PLACES_ICON_KEY @"icon"
 
 @interface Define : NSObject
 

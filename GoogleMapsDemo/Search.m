@@ -45,8 +45,9 @@
         cell=[[[NSBundle mainBundle]loadNibNamed:@"TableViewCell" owner:self.tableView options:nil]firstObject];
     }
     PlaceModel *place=self.placesArray[indexPath.row];
-    cell.nameLabel.text=place.name;
-    cell.adressLabel.text=place.vicinity;
+	[cell setCellAttribute:place];  // setting the value of cell labels
+	
+	
     
     return cell;
 }
