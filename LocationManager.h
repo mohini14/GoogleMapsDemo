@@ -20,6 +20,7 @@ typedef void (^CompletionHandlerBlock)(double latitude,double longitude,NSError 
 @property(nonatomic) BOOL isLocationUpdated;
 
 +(instancetype) getInstance;
+
 -(void) getLocation :(void (^) (double latitude,double longitude,NSError *error))completionHandler;
 
 

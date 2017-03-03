@@ -40,17 +40,22 @@
 
 
 //DownLoad Image For the Very First Time
--(void) downloadImageForURL :(NSString *)imageURL withCompletionHandler:(void (^) (UIImage *downloadedImage))callBack{
+-(void) downloadImageForURL :(NSString *)imageURL withCompletionHandler:(void (^) (UIImage *downloadedImage))callBack
+{
 	NSURL *imageNSURL=[NSURL URLWithString:imageURL];
+	
 	NSURLSessionConfiguration *sessionConfiguration=[NSURLSessionConfiguration defaultSessionConfiguration];
 	NSURLSession *session=[NSURLSession sessionWithConfiguration:sessionConfiguration];
-	NSURLSessionDownloadTask *downloadTask=[session downloadTaskWithURL:imageNSURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+	
+	NSURLSessionDownloadTask *downloadTask=[session downloadTaskWithURL:imageNSURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error)
+	{
 		NSData *data=[NSData dataWithContentsOfURL:location];
 		UIImage *downloadedImage=[UIImage imageWithData:data];
 		[self saveDownloadedImage:downloadedImage withURL:imageNSURL];//saving downloaded Image
-		dispatch_async(dispatch_get_main_queue(), ^{
+		
+		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
 			callBack(downloadedImage);
-		});
+		}];
 		
 	}];
 
@@ -60,25 +65,26 @@
 
 //Save image when Downloaded
 -(void) saveDownloadedImage :(UIImage *)image withURL:imageURL{
-	if(image !=nil){
-		NSString *pathToSaveImages=[self retrievePathForNameInDocumentDirectory :[imageURL lastPathComponent]];//retrieving path and corresponding name of file
+	if(image !=nil)
+	{
+		//retrieving path and corresponding name of file
+		NSString *pathToSaveImages=[self retrievePathForNameInDocumentDirectory :[imageURL lastPathComponent]];
 		NSData *imageData=UIImagePNGRepresentation(image);
 		[imageData writeToFile:pathToSaveImages atomically:NO];
-		
 	}
 }
 
 // Retreving image from cache manager for given "PATH" in Documnet Directory for given "NAME"
--(UIImage *)loadImageForURL :(NSString *)imgURL{
-	
+-(UIImage *)loadImageForURL :(NSString *)imgURL
+{
 	UIImage *image=[UIImage imageWithContentsOfFile:[self retrievePathForNameInDocumentDirectory :[imgURL lastPathComponent]]];//loading image if already present
 	return image;
-	
 }
 
 
 //Retrieve path For given NAME
--(NSString *)  retrievePathForNameInDocumentDirectory :(NSString *)fileName{
+-(NSString *)  retrievePathForNameInDocumentDirectory :(NSString *)fileName
+{
 	NSArray   *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString  *docDirectory = [paths    objectAtIndex:0];
 	NSString  *imagePath = [docDirectory   stringByAppendingPathComponent:fileName];

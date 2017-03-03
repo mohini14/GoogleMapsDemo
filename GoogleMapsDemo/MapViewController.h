@@ -14,9 +14,6 @@
 #import "AlertManager.h"
 #import "ImageManager.h"
 
-
-
-
 @interface MapViewController : UIViewController<GMSMapViewDelegate>
 
 

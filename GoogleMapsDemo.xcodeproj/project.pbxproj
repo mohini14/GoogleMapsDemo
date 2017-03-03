@@ -175,12 +175,11 @@
 		1575CA981E6560D500507D32 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1575CA991E6560DE00507D32 /* App */,
 				157CA0211E6952740036B548 /* ViewControllers */,
 				15CF83EC1E674AC200440C2D /* Utility */,
-				154097DB1E66EF1D004A203D /* DataManager */,
 				153074C01E67FC5800DAA29F /* CacheManager */,
 				15005FAE1E657E52007B245E /* Customise View */,
-				1575CA991E6560DE00507D32 /* App */,
 			);
 			name = Classes;
 			path = ..;
@@ -191,6 +190,7 @@
 			children = (
 				156C190A1E6409FD00E85A0B /* AppDelegate.h */,
 				156C190B1E6409FD00E85A0B /* AppDelegate.m */,
+				154097DB1E66EF1D004A203D /* DataManager */,
 			);
 			name = App;
 			sourceTree = "<group>";
