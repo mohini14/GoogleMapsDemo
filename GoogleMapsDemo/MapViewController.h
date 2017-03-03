@@ -23,7 +23,7 @@
 @property (strong,nonatomic) Search *searchView;
 @property (weak, nonatomic) IBOutlet UIView *searchBarView;
 @property (strong,nonatomic) NSArray *places;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapViewTop;
 
 -(void) SetUpVC;
 -(void) setMarker;

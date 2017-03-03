@@ -35,12 +35,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lFC-gg-eOd" secondAttribute="trailing" id="9U6-ez-XwY"/>
                             <constraint firstItem="xfa-j4-hGA" firstAttribute="leading" secondItem="f7j-Zn-657" secondAttribute="leading" id="AaR-Xm-HDj"/>
                             <constraint firstAttribute="trailing" secondItem="xfa-j4-hGA" secondAttribute="trailing" id="DZa-5p-ya3"/>
-                            <constraint firstItem="lFC-gg-eOd" firstAttribute="leading" secondItem="f7j-Zn-657" secondAttribute="leading" id="VVJ-tU-lOh"/>
-                            <constraint firstAttribute="trailing" secondItem="lFC-gg-eOd" secondAttribute="trailing" id="aVk-er-6nY"/>
-                            <constraint firstItem="egd-Kr-o7l" firstAttribute="top" secondItem="lFC-gg-eOd" secondAttribute="bottom" id="mG8-zU-4VJ"/>
-                            <constraint firstItem="lFC-gg-eOd" firstAttribute="top" secondItem="S2v-G8-ZfU" secondAttribute="bottom" id="myJ-nH-FTf"/>
+                            <constraint firstItem="lFC-gg-eOd" firstAttribute="leading" secondItem="f7j-Zn-657" secondAttribute="leading" id="btF-Yd-tyE"/>
+                            <constraint firstItem="lFC-gg-eOd" firstAttribute="top" secondItem="S2v-G8-ZfU" secondAttribute="bottom" id="iZE-FZ-Auq"/>
+                            <constraint firstItem="egd-Kr-o7l" firstAttribute="top" secondItem="lFC-gg-eOd" secondAttribute="bottom" id="rP4-Sq-aDU"/>
                             <constraint firstItem="xfa-j4-hGA" firstAttribute="top" secondItem="S2v-G8-ZfU" secondAttribute="bottom" id="tdV-de-GgT"/>
                         </constraints>
                     </view>
@@ -63,6 +63,7 @@
                     <connections>
                         <outlet property="mapContainerView" destination="f7j-Zn-657" id="OYd-L6-y2J"/>
                         <outlet property="mapView" destination="lFC-gg-eOd" id="lAY-OT-Dqe"/>
+                        <outlet property="mapViewTop" destination="iZE-FZ-Auq" id="Ot0-Q3-qDx"/>
                         <outlet property="searchBarView" destination="xfa-j4-hGA" id="eYi-S5-dCJ"/>
                     </connections>
                 </viewController>

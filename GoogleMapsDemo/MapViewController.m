@@ -7,6 +7,8 @@
 //
 
 #import "MapViewController.h"
+#define K_MAP_HEIGHT 400
+#define K_MAP_WIDTH 400
 
 
 @interface MapViewController ()
@@ -14,7 +16,9 @@
 @end
 
 
-@implementation MapViewController
+@implementation MapViewController{
+	NSInteger flag;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,7 +46,6 @@
 #pragma mark-set up Map
 -(void)setMapToDefaultLocation
 {
-	
 	//create a GMSCameraPosition that tells map to display corresponding coordinates
 	[self.mapView clear];
     [[LocationManager getInstance] getLocation:^(double lat, double lon, NSError *error){
@@ -72,24 +75,27 @@
 //method to populate map for given search
 -(void) setMarker
 {
-	
-	[self.mapView clear];
-	
-	for(PlaceModel *obj in self.places){
+	if(self.places.count > 0){
+		[self.mapView clear];
+		for(PlaceModel *obj in self.places){
 		GMSMarker *marker=[[GMSMarker alloc]init];
 		marker.position=CLLocationCoordinate2DMake([obj.lat doubleValue], [obj.longt doubleValue]);// method gives location for given latitude and longitude
 		marker.title=obj.name;
 		marker.icon=[ImageManager imageWithImage:obj.iconImage scaledToSize:CGSizeMake(DEFAULT_IMAGE_SIZE,DEFAULT_IMAGE_SIZE)];//to reset the size of icon
 		marker.map=self.mapView;
-		
-}
+		}
+	}
+	
 	
 }
 
 
 
+
+
 #pragma mark-mapView Delegates
-- (void) mapView:(GMSMapView *)mapView didTapAtCoordinate :(CLLocationCoordinate2D)coordinate{
+- (void) mapView:(GMSMapView *)mapView didTapAtCoordinate :(CLLocationCoordinate2D)coordinate
+{
 	[self.searchBarView setHidden:YES];
 	[self setMarker];
 	
@@ -97,23 +103,29 @@
 
 
 #pragma mark-Methods to handle actions on VC
-- (IBAction)refreshButton:(id)sender {
+- (IBAction)refreshButton:(id)sender
+{
     [self setMapToDefaultLocation];
 }
 
 
-- (IBAction)searchButton:(UIBarButtonItem *)sender {
+- (IBAction)searchButton:(UIBarButtonItem *)sender
+{
+	_mapViewTop.constant=400;
 	[self.searchBarView setHidden:NO];
 	[self.searchView.searchBar becomeFirstResponder];
 	self.searchView = [Search loadXIB];
-	[_searchView showSearchView:self.view overView:_searchBarView completion:^(NSArray *searchResult) {
+	[_searchView showSearchView:self.view overView:_searchBarView completion:^(NSArray *searchResult)
+	{
 		_places = searchResult;
 		[self setMarker]; //to populate map for given search
 		[self.searchBarView setHidden:YES];
+		_mapViewTop.constant=0;
 		
 	}];
 	
 	
+
 	
 }
 
