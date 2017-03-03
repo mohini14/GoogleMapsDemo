@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Define.h"
 
 
 typedef void (^CompletionHandlerBlock)(double latitude,double longitude,NSError *error);
@@ -16,7 +17,6 @@ typedef void (^CompletionHandlerBlock)(double latitude,double longitude,NSError 
 
 @property (strong,nonatomic) CLLocationManager *locationManager;
 @property (strong,nonatomic) CompletionHandlerBlock completionHandlerBlock;
-
 @property(nonatomic) BOOL isLocationUpdated;
 
 +(instancetype) getInstance;

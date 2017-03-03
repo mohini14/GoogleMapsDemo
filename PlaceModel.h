@@ -20,7 +20,8 @@
 @property  NSString *iconURL;
 @property  UIImage *iconImage;
 
-- (instancetype) initWithDictionary:(NSDictionary*)dictionary;
 -(void) getImage :(void (^)(UIImage * image))callBack;
+- (instancetype) initWithDictionary:(NSDictionary*)dictionary;
+
 
 @end

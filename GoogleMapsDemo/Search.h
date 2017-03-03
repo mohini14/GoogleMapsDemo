@@ -31,7 +31,7 @@ typedef void (^CompletionBlock)(NSArray* searchResult);
 
 -(void)showSearchView:(UIView*)superView overView:(UIView*)subView  completion:(CompletionBlock)completion;
 
--(void) sendData :(NSArray *)places withCompletionHandler:(void (^)(NSArray * array))callBack;
+//-(void) sendData :(NSArray *)places withCompletionHandler:(void (^)(NSArray * array))callBack;
 - (IBAction)searchButton:(UIButton *)sender;
 +(instancetype) loadXIB;
 

@@ -12,7 +12,6 @@
 		15005FB81E658901007B245E /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15005FB71E658901007B245E /* LocationManager.m */; };
 		151DFCCD1E64142F0048F0FF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 151DFCCC1E64142F0048F0FF /* Podfile */; };
 		153074C31E67FC7F00DAA29F /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 153074C21E67FC7F00DAA29F /* CacheManager.m */; };
-		154097D11E66D1D9004A203D /* Define.m in Sources */ = {isa = PBXBuildFile; fileRef = 154097D01E66D1D9004A203D /* Define.m */; };
 		154097D51E66D2D6004A203D /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 154097D31E66D2D6004A203D /* TableViewCell.m */; };
 		154097D61E66D2D6004A203D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154097D41E66D2D6004A203D /* TableViewCell.xib */; };
 		154097DA1E66E128004A203D /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 154097D91E66E128004A203D /* ServiceManager.m */; };
@@ -24,6 +23,7 @@
 		156C19171E6409FD00E85A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156C19151E6409FD00E85A0B /* LaunchScreen.storyboard */; };
 		1575CA9F1E6562B500507D32 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1575CA9E1E6562B500507D32 /* MapViewController.m */; };
 		1575CAA11E65644B00507D32 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1575CAA01E65644B00507D32 /* CoreLocation.framework */; };
+		157CA0251E6954D80036B548 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 157CA0241E6954D80036B548 /* ImageManager.m */; };
 		15CF83EB1E673C0800440C2D /* PlaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CF83EA1E673C0800440C2D /* PlaceModel.m */; };
 		15CF83EF1E674AE000440C2D /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CF83EE1E674AE000440C2D /* AlertManager.m */; };
 		433D1F451F3A8033BC0FF733 /* libPods-GoogleMapsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5203869B9769727015552DD /* libPods-GoogleMapsDemo.a */; };
@@ -39,7 +39,6 @@
 		153074C11E67FC7F00DAA29F /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
 		153074C21E67FC7F00DAA29F /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
 		154097CF1E66D1D9004A203D /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
-		154097D01E66D1D9004A203D /* Define.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Define.m; sourceTree = "<group>"; };
 		154097D21E66D2D6004A203D /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		154097D31E66D2D6004A203D /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		154097D41E66D2D6004A203D /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -58,6 +57,8 @@
 		1575CA9D1E6562B500507D32 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = GoogleMapsDemo/MapViewController.h; sourceTree = "<group>"; };
 		1575CA9E1E6562B500507D32 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = GoogleMapsDemo/MapViewController.m; sourceTree = "<group>"; };
 		1575CAA01E65644B00507D32 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		157CA0231E6954D80036B548 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		157CA0241E6954D80036B548 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		15CF83E91E673C0800440C2D /* PlaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceModel.h; sourceTree = "<group>"; };
 		15CF83EA1E673C0800440C2D /* PlaceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceModel.m; sourceTree = "<group>"; };
 		15CF83ED1E674AE000440C2D /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertManager.h; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 			children = (
 				154097D41E66D2D6004A203D /* TableViewCell.xib */,
 				15005FB11E657F67007B245E /* SearchView.xib */,
-				153074C01E67FC5800DAA29F /* CacheManager */,
 			);
 			name = XIB;
 			path = GoogleMapsDemo;
@@ -100,6 +100,7 @@
 				15005FAB1E657E46007B245E /* Search.h */,
 			);
 			name = "Customise View";
+			path = GoogleMapsDemo;
 			sourceTree = "<group>";
 		};
 		153074C01E67FC5800DAA29F /* CacheManager */ = {
@@ -109,16 +110,17 @@
 				153074C21E67FC7F00DAA29F /* CacheManager.m */,
 			);
 			name = CacheManager;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		154097D71E66E103004A203D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				15CF83EC1E674AC200440C2D /* Utility */,
-				154097DB1E66EF1D004A203D /* DataManager */,
+				156C19071E6409FD00E85A0B /* Supporting Files */,
+				15005F9B1E657AAE007B245E /* XIB */,
+				1575CA9A1E65610700507D32 /* StoryBoard */,
 			);
 			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		154097DB1E66EF1D004A203D /* DataManager */ = {
@@ -136,8 +138,6 @@
 		156C18FB1E6409FB00E85A0B = {
 			isa = PBXGroup;
 			children = (
-				154097D71E66E103004A203D /* Resources */,
-				151DFCCC1E64142F0048F0FF /* Podfile */,
 				156C19061E6409FD00E85A0B /* GoogleMapsDemo */,
 				156C19051E6409FD00E85A0B /* Products */,
 				C10CD65644198E332E987656 /* Pods */,
@@ -156,10 +156,8 @@
 		156C19061E6409FD00E85A0B /* GoogleMapsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				15005FAE1E657E52007B245E /* Customise View */,
-				1575CA9A1E65610700507D32 /* StoryBoard */,
 				1575CA981E6560D500507D32 /* Classes */,
-				156C19071E6409FD00E85A0B /* Supporting Files */,
+				154097D71E66E103004A203D /* Resources */,
 			);
 			path = GoogleMapsDemo;
 			sourceTree = "<group>";
@@ -171,19 +169,18 @@
 				156C19081E6409FD00E85A0B /* main.m */,
 			);
 			name = "Supporting Files";
+			path = GoogleMapsDemo;
 			sourceTree = "<group>";
 		};
 		1575CA981E6560D500507D32 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1575CA9D1E6562B500507D32 /* MapViewController.h */,
-				1575CA9E1E6562B500507D32 /* MapViewController.m */,
-				15005FB61E658901007B245E /* LocationManager.h */,
-				15005FB71E658901007B245E /* LocationManager.m */,
-				15005F9B1E657AAE007B245E /* XIB */,
+				157CA0211E6952740036B548 /* ViewControllers */,
+				15CF83EC1E674AC200440C2D /* Utility */,
+				154097DB1E66EF1D004A203D /* DataManager */,
+				153074C01E67FC5800DAA29F /* CacheManager */,
+				15005FAE1E657E52007B245E /* Customise View */,
 				1575CA991E6560DE00507D32 /* App */,
-				154097CF1E66D1D9004A203D /* Define.h */,
-				154097D01E66D1D9004A203D /* Define.m */,
 			);
 			name = Classes;
 			path = ..;
@@ -205,6 +202,7 @@
 				156C19101E6409FD00E85A0B /* Main.storyboard */,
 			);
 			name = StoryBoard;
+			path = GoogleMapsDemo;
 			sourceTree = "<group>";
 		};
 		1575CA9B1E65611900507D32 /* Others */ = {
@@ -214,6 +212,15 @@
 				156C19181E6409FD00E85A0B /* Info.plist */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		157CA0211E6952740036B548 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1575CA9D1E6562B500507D32 /* MapViewController.h */,
+				1575CA9E1E6562B500507D32 /* MapViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		15CF83E81E673BE600440C2D /* Data Model */ = {
@@ -228,8 +235,13 @@
 		15CF83EC1E674AC200440C2D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				154097CF1E66D1D9004A203D /* Define.h */,
+				15005FB61E658901007B245E /* LocationManager.h */,
+				15005FB71E658901007B245E /* LocationManager.m */,
 				15CF83ED1E674AE000440C2D /* AlertManager.h */,
 				15CF83EE1E674AE000440C2D /* AlertManager.m */,
+				157CA0231E6954D80036B548 /* ImageManager.h */,
+				157CA0241E6954D80036B548 /* ImageManager.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -239,6 +251,7 @@
 			children = (
 				34BD2521543D1911C01B5D3F /* Pods-GoogleMapsDemo.debug.xcconfig */,
 				30FC8E8D0DBB7FF75799F270 /* Pods-GoogleMapsDemo.release.xcconfig */,
+				151DFCCC1E64142F0048F0FF /* Podfile */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -380,10 +393,10 @@
 				154097D51E66D2D6004A203D /* TableViewCell.m in Sources */,
 				156C190C1E6409FD00E85A0B /* AppDelegate.m in Sources */,
 				15CF83EF1E674AE000440C2D /* AlertManager.m in Sources */,
+				157CA0251E6954D80036B548 /* ImageManager.m in Sources */,
 				15005FB81E658901007B245E /* LocationManager.m in Sources */,
 				153074C31E67FC7F00DAA29F /* CacheManager.m in Sources */,
 				15CF83EB1E673C0800440C2D /* PlaceModel.m in Sources */,
-				154097D11E66D1D9004A203D /* Define.m in Sources */,
 				154097DE1E66EF3F004A203D /* DataParser.m in Sources */,
 				15005FAD1E657E46007B245E /* Search.m in Sources */,
 				156C19091E6409FD00E85A0B /* main.m in Sources */,

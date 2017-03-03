@@ -13,6 +13,7 @@
 #import "PlaceModel.h"
 
 @interface DataParser : NSObject
+
 +(void) parseSearchData :(NSString *)serchType withLatitude:(double)latitude withLongitude:(double)longitude withCompletionHandler:(void(^)(NSArray *array,NSString *errorMsg))CallBackToMainVC;
 
 @end

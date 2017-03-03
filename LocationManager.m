@@ -14,10 +14,8 @@
 +(instancetype) getInstance
 {
 	static LocationManager *instanceVar=nil;
-
-    if(instanceVar != nil)
+	if(instanceVar != nil)
         return instanceVar;
-
 	@synchronized (self)
 	{
 		if(instanceVar==nil)
@@ -26,14 +24,14 @@
             instanceVar.locationManager = [[CLLocationManager alloc] init];
             instanceVar.locationManager.delegate=instanceVar;
             instanceVar.locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-
 		}
 	}
     return instanceVar;
 }
 
 
-
+#pragma mark- to get  current location
+//method returns the latitude and longitude of current location
 -(void) getLocation :(void (^) (double latitude,double longitude,NSError *error))completionHandler{
 	self.completionHandlerBlock=completionHandler;
 	[self.locationManager startUpdatingLocation];
@@ -43,25 +41,18 @@
 
 
 #pragma mark - Delegate Methods (CLLocationManager)
-
-
-
+// method deals with error if CLLocationManager fails to update location
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-		self.completionHandlerBlock(00,00,error);
+		self.completionHandlerBlock(CONST_ZERO_INT,CONST_ZERO_INT,error);
 }
-
-
-
+// method gives location if error is equal to nil
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
 	if(newLocation!=nil){
         if(self.isLocationUpdated == FALSE) {
-            NSLog(@"Location Updated successfully ");
-            self.completionHandlerBlock(newLocation.coordinate.latitude, newLocation.coordinate.longitude, nil);
+			self.completionHandlerBlock(newLocation.coordinate.latitude, newLocation.coordinate.longitude, nil);
             self.isLocationUpdated = TRUE;
             [self.locationManager stopUpdatingLocation];
         }
-        NSLog(@"Tried updating Location");
-
     };
 
 

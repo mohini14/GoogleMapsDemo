@@ -12,23 +12,14 @@
 
 #pragma  mark-To load customise XIB file
 +(instancetype) loadXIB{
-	Search *search=[[[NSBundle mainBundle]loadNibNamed:@"SearchView" owner:self options:nil]lastObject];
+	Search *search=[[[NSBundle mainBundle]loadNibNamed:SEARCH_VIEW_CELL_IDENTIFIER owner:self options:nil]lastObject];
 	search.tableView.delegate=search;
 	search.tableView.dataSource=search;
     search.placesArray = @[];
-
-	
+	[search.tableView setHidden:YES];
 	return search;
 }
 
-
--(void)showSearchView:(UIView*)superView overView:(UIView*)subView  completion:(CompletionBlock)completion
-{
-	self.frame = subView.frame;
-	_callback = completion;
-	[superView addSubview:self];
-	
-}
 
 
 #pragma mark - Table View Delegates
@@ -48,36 +39,21 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
+    TableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:TABLE_CELL_IDENTIFIER];
     if(cell==nil){
-        cell=[[[NSBundle mainBundle]loadNibNamed:@"TableViewCell" owner:self.tableView options:nil]firstObject];
+        cell=[[[NSBundle mainBundle]loadNibNamed:TABLE_CELL_IDENTIFIER owner:self.tableView options:nil]firstObject];
     }
     PlaceModel *place=self.placesArray[indexPath.row];
 	[cell setCellAttribute:place];  // setting the value of cell labels
-	
-	
-    
-    return cell;
+	return cell;
 }
 
-
--(IBAction)onShowButtonClick:(id)sender
-{
-	
-	if(_placesArray.count > 0)
-		_callback(_placesArray);
-	else
-		_callback([NSArray new]);
-	
-	[self removeFromSuperview];
-}
 
 
 
 #pragma mark-actions on customise view
-
 - (IBAction)searchButton:(UIButton *)sender {
-    
+	
     NSString *searchString=[self.searchBar.text lowercaseString];
 	if(searchString.length >0){
     [[LocationManager getInstance]getLocation:^(double latitude, double longitude, NSError *error) {
@@ -86,24 +62,35 @@
                 [AlertManager showAlertPopupWithTitle:errorMsg forView:self.superview.inputViewController];
             }else{
                 self.placesArray=array;
+				[self.tableView setHidden:NO];
 				[self.tableView reloadData];
             }
         }];
     }];
 	}else{
-		[AlertManager showAlertPopupWithTitle:EMPTY_STRING_ERROR forView:self.superview];
+		//[AlertManager showAlertPopupWithTitle:EMPTY_STRING_ERROR forView:self.superview];
 	}
 
 }
 
-#pragma mark - method to pass data to main VC
--(void) sendData :(NSArray *)places withCompletionHandler:(void (^)(NSArray * array))callBack{
-	callBack(places);
-	
+
+-(IBAction)onShowButtonClick:(id)sender
+{
+	if(_placesArray.count > CONST_ZERO_FLOAT)
+		_callback(_placesArray);
+	else
+		_callback([NSArray new]);
+	[self removeFromSuperview];
 }
 
 
-
+#pragma mark- to interact with main VC
+//method would set the values of view on superview and woul send palces array to main VC
+-(void)showSearchView:(UIView*)superView overView:(UIView*)subView  completion:(CompletionBlock)completion{
+	self.frame = subView.frame;
+	_callback = completion;
+	[superView addSubview:self];
+}
 
 
 @end
